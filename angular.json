@@ -40,7 +40,11 @@
               "apps/ecommerce-storefront-b2b/src/styles.scss",
               "node_modules/animate.css/animate.css"
             ],
-            "scripts": []
+            "scripts": [
+              "apps/ecommerce-storefront-b2b/src/scripts/stickyHeader.js",
+              "../node_modules/jquery/dist/jquery.min.js"
+
+            ]
           },
           "configurations": {
             "production": {

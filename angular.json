@@ -42,8 +42,7 @@
             ],
             "scripts": [
               "apps/ecommerce-storefront-b2b/src/scripts/stickyHeader.js",
-              "../node_modules/jquery/dist/jquery.min.js"
-
+              "/node_modules/wowjs/dist/wow.js"
             ]
           },
           "configurations": {

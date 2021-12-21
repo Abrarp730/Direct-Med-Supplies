@@ -41,8 +41,7 @@
               "node_modules/animate.css/animate.css"
             ],
             "scripts": [
-              "apps/ecommerce-storefront-b2b/src/scripts/stickyHeader.js",
-              "/node_modules/wowjs/dist/wow.js"
+              "apps/ecommerce-storefront-b2b/src/scripts/stickyHeader.js"
             ]
           },
           "configurations": {

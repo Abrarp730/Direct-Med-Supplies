@@ -1,0 +1,27 @@
+
+.cart-button-1 {
+    background-color: #fd7e14;
+    color: #ffffff;
+    padding-block: 12px;
+    line-height: 14px;
+    height: 40px;
+    padding-inline: 15px;
+    border-radius: 25px;
+    font-family: var(--font-family);
+    /* margin-inline: 5px; */
+    text-decoration: none;
+    border: 1px solid #fd7e14;
+        transition: all .3s ease-in-out;
+  }
+  
+  .cart-button-1:hover {
+    background-color: transparent;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #000000;
+    background-color: #000000;
+  }
+  .rst-btn .cart-button-1 {
+    padding-inline: 55px;
+    margin: 0 auto;
+  }

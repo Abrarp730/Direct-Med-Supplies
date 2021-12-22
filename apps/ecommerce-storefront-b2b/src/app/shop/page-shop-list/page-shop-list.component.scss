@@ -12,3 +12,24 @@
   .container {
     max-width: 1400px;
   }
+  .pro-filters {
+    border-bottom: 0px solid #e4e4e4;
+    padding-bottom: 10px;
+    display: flow-root;
+  }
+  #sorting span,
+  #res {
+    font-size: 14px
+  }
+  .filter-01 {
+    float: right;
+  }
+  .filter-02 {
+    float: right;
+  }
+  
+   #sorting,
+  #res {
+    font-size: 12px;
+    margin-top: 2%
+  }

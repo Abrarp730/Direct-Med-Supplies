@@ -25,3 +25,37 @@
     padding-inline: 55px;
     margin: 0 auto;
   }
+  #sidebar {
+    width: 35%;
+    padding: 20px;
+    float: left
+  }
+  .sb-link a {
+    color: #fd7e14;
+    text-decoration: none;
+  }
+  
+  .sb-link a:hover {
+    color: #000000;
+    text-decoration: none;
+  }
+
+ 
+
+  
+.slimScrollDiv {
+    height: auto !important;
+    margin-bottom: 37px;
+    width: 250px !important
+  }
+  .scrollable {
+    width: 250px !important;
+    background: #eee;
+    margin: 0 auto;
+    padding: 2.4rem;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  .container {
+    max-width: 1400px;
+  }

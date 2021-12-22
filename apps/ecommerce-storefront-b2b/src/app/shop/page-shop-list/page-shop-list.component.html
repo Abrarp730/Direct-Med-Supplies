@@ -5,16 +5,16 @@
 ></app-block-header>
 
 <!--Content-->
-<div class="block-split block-split--has-sidebar" *ngIf="data">
-    <div class="container">
-        <div class="block-split__row row no-gutters">
+<div class="container listing-sections" *ngIf="data">
+        <div class="row">
+            <div class="col-md-12">
             <!--Sidebar-->
-            <div class="block-split__item block-split__item-sidebar col-auto">
+            <div id="sidebar">
                 <app-shop-sidebar #sidebar></app-shop-sidebar>
             </div>
             <!--Products view-->
-            <div class="block-split__item block-split__item-content col-auto">
-                <div class="block">
+            <div id="products">
+                <div class="container">
 
                     <div class="products-view" [class.products-view--loading]="status === 'loading'">
                         <div class="products-view__body" [formGroup]="filterFormGroup">
@@ -71,7 +71,25 @@
 
                                     </div>
                                 </div>
-
+                                <!-- <div class="pro-filters">
+                                    <div class="text-muted m-2 show-resu" id="res">Showing 44 results</div>
+                                    <div class="filter-01">
+                                        <div id="sorting" class="border rounded p-1 m-1"> <span class="text-muted">Sort
+                                                by</span> <select name="sort" id="sort">
+                                                <option value="popularity"><b>Name (A-Z)</b></option>
+                                                <option value="prcie"><b>Name (Z-A)</b></option>
+                                            </select> </div>
+                                    </div>
+                                    <div class="filter-02">
+                                        <div id="sorting" class="border rounded p-1 m-1"> <span class="text-muted">Show</span>
+                                            <select name="sort" id="sort">
+                                                <option value="popularity"><b>32</b></option>
+                                                <option value="popularity"><b>16</b></option>
+                                                <option value="prcie"><b>8</b></option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div> -->
                                 <div class="view-options__body view-options__body--filters" *ngIf="activeFilters?.length">
                                     <div class="view-options__label">{{ 'TEXT_ACTIVE_FILTERS' | translate }}</div>
                                     <div class="view-options__applied-filters applied-filters">

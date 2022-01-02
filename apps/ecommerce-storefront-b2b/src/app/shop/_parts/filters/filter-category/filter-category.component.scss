@@ -32,6 +32,7 @@
     margin-bottom: 37px;
     width: 250px !important
   }
+    
   .scrollable {
     width: 250px !important;
     background: #eee;
@@ -39,6 +40,9 @@
     padding: 2.4rem;
     border: 1px solid #ccc;
     overflow: hidden;
+  }
+  .scrollable:hover {
+    overflow-y: scroll;
   }
 
   .sb-link a {
@@ -54,4 +58,20 @@
 select,
 .btn {
   color: #fd7e14;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+.ml-3,
+.mx-3 {
+  margin-left: 1rem !important;
+}
+.pb-2,
+.py-2 {
+  padding-bottom: 0.5rem !important;
+}
+.pt-2,
+.py-2 {
+  padding-top: 0.5rem !important;
 }

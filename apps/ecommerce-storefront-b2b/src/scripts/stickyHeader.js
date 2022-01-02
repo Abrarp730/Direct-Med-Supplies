@@ -13,10 +13,21 @@ function myFunction() {
             navbar.classList.remove("sticky");
         }
     }
+    // var scrollable = $('.scrollable');
+    //     console.log(scrollable,"Scrollable")
+    
+    //     //
+    //     scrollable.slimScroll({
+    //         height: '20rem',
+    //         // width: '24rem',
+    //        // start: 'top'
+    //     });
 }
 
 //when the user scrolls the page ,execute animations
-window.onload = function () { myFunction1() };
+//window.onload = function () { myFunction1() };
+window.addEventListener('load', myFunction1, false);
+
 function myFunction1() {
     var wow = new WOW(
         {
@@ -33,57 +44,211 @@ function myFunction1() {
         }
     );
     wow.init();
+    console.log(wow);
 }
 
 
 
-window.onload = function () {
-    // Cache DOM Element
-    var scrollable = $('.scrollable');
-    console.log(scrollable,"Scrollable")
+// window.onscroll = function () {
+//     // Cache DOM Element
+//     var scrollable = $('.scrollable');
+//     console.log(scrollable,"Scrollable")
 
-    // Keeping the Scrollable state separate
-    var state = {
-        pos: {
-            lowest: 0,
-            current: 0
-        },
-
-        offset: {
-            top: [0, 0] //Old Offset, New Offset
-        }
-    };
-
-    //
-    scrollable.slimScroll({
-        height: '32rem',
-        width: '24rem',
-        start: 'top'
-    });
+//     //
+//     scrollable.slimScroll({
+//         height: '22rem',
+//         // width: '24rem',
+//        // start: 'top'
+//     });
     
-    //
-    scrollable.slimScroll().bind('slimscrolling', function (e, pos) {
-        // Update the Scroll Position and Offset
+//     // Keeping the Scrollable state separate
+//     // var state = {
+//     //     pos: {
+//     //         lowest: 0,
+//     //         current: 0
+//     //     },
 
-        // Highest Position
-        state.pos.highest = pos !== state.pos.highest ?
-            pos > state.pos.highest ? pos : state.pos.highest :
-            state.pos.highest;
+//     //     offset: {
+//     //         top: [0, 0] //Old Offset, New Offset
+//     //     }
+//     // };
 
-        // Update Offset State
-        state.offset.top.push(pos - state.pos.lowest);
-        state.offset.top.shift();
+//     // //
+//     // scrollable.slimScroll().bind('slimscrolling', function (e, pos) {
+//     //     // Update the Scroll Position and Offset
 
-        if (state.offset.top[0] < state.offset.top[1]) {
-            console.log('...Scrolling Down');
-            // ... YOUR CODE ...
-        } else if (state.offset.top[1] < state.offset.top[0]) {
-            console.log('Scrolling Up...');
-            // ... YOUR CODE ...
+//     //     // Highest Position
+//     //     state.pos.highest = pos !== state.pos.highest ?
+//     //         pos > state.pos.highest ? pos : state.pos.highest :
+//     //         state.pos.highest;
+
+//     //     // Update Offset State
+//     //     state.offset.top.push(pos - state.pos.lowest);
+//     //     state.offset.top.shift();
+
+//     //     if (state.offset.top[0] < state.offset.top[1]) {
+//     //         console.log('...Scrolling Down');
+//     //         // ... YOUR CODE ...
+//     //     } else if (state.offset.top[1] < state.offset.top[0]) {
+//     //         console.log('Scrolling Up...');
+//     //         // ... YOUR CODE ...
+//     //     } else {
+//     //         console.log('Not Scrolling');
+//     //         // ... YOUR CODE ...
+//     //     }
+//     // });
+// };
+//# sourceURL=pen.js
+
+
+(function ($) {
+    $(document).ready(function () {
+        $('.xzoom, .xzoom-gallery').xzoom({ zoomWidth: 400, title: true, tint: '#333', Xoffset: 15 });
+        $('.xzoom2, .xzoom-gallery2').xzoom({ position: '#xzoom2-id', tint: '#ffa200' });
+        $('.xzoom3, .xzoom-gallery3').xzoom({ position: 'lens', lensShape: 'circle', sourceClass: 'xzoom-hidden' });
+        $('.xzoom4, .xzoom-gallery4').xzoom({ tint: '#006699', Xoffset: 15 });
+        $('.xzoom5, .xzoom-gallery5').xzoom({ tint: '#006699', Xoffset: 15 });
+        
+        console.log();
+        //Integration with hammer.js
+        var isTouchSupported = 'ontouchstart' in window;
+
+        if (isTouchSupported) {
+            //If touch device
+            $('.xzoom, .xzoom2, .xzoom3, .xzoom4, .xzoom5').each(function () {
+                var xzoom = $(this).data('xzoom');
+                xzoom.eventunbind();
+            });
+
+            $('.xzoom, .xzoom2, .xzoom3').each(function () {
+                var xzoom = $(this).data('xzoom');
+                $(this).hammer().on("tap", function (event) {
+                    event.pageX = event.gesture.center.pageX;
+                    event.pageY = event.gesture.center.pageY;
+                    var s = 1, ls;
+
+                    xzoom.eventmove = function (element) {
+                        element.hammer().on('drag', function (event) {
+                            event.pageX = event.gesture.center.pageX;
+                            event.pageY = event.gesture.center.pageY;
+                            xzoom.movezoom(event);
+                            event.gesture.preventDefault();
+                        });
+                    }
+
+                    xzoom.eventleave = function (element) {
+                        element.hammer().on('tap', function (event) {
+                            xzoom.closezoom();
+                        });
+                    }
+                    xzoom.openzoom(event);
+                });
+            });
+
+            $('.xzoom4').each(function () {
+                var xzoom = $(this).data('xzoom');
+                $(this).hammer().on("tap", function (event) {
+                    event.pageX = event.gesture.center.pageX;
+                    event.pageY = event.gesture.center.pageY;
+                    var s = 1, ls;
+
+                    xzoom.eventmove = function (element) {
+                        element.hammer().on('drag', function (event) {
+                            event.pageX = event.gesture.center.pageX;
+                            event.pageY = event.gesture.center.pageY;
+                            xzoom.movezoom(event);
+                            event.gesture.preventDefault();
+                        });
+                    }
+
+                    var counter = 0;
+                    xzoom.eventclick = function (element) {
+                        element.hammer().on('tap', function () {
+                            counter++;
+                            if (counter == 1) setTimeout(openfancy, 300);
+                            event.gesture.preventDefault();
+                        });
+                    }
+
+                    function openfancy() {
+                        if (counter == 2) {
+                            xzoom.closezoom();
+                            $.fancybox.open(xzoom.gallery().cgallery);
+                        } else {
+                            xzoom.closezoom();
+                        }
+                        counter = 0;
+                    }
+                    xzoom.openzoom(event);
+                });
+            });
+
+            $('.xzoom5').each(function () {
+                var xzoom = $(this).data('xzoom');
+                $(this).hammer().on("tap", function (event) {
+                    event.pageX = event.gesture.center.pageX;
+                    event.pageY = event.gesture.center.pageY;
+                    var s = 1, ls;
+
+                    xzoom.eventmove = function (element) {
+                        element.hammer().on('drag', function (event) {
+                            event.pageX = event.gesture.center.pageX;
+                            event.pageY = event.gesture.center.pageY;
+                            xzoom.movezoom(event);
+                            event.gesture.preventDefault();
+                        });
+                    }
+
+                    var counter = 0;
+                    xzoom.eventclick = function (element) {
+                        element.hammer().on('tap', function () {
+                            counter++;
+                            if (counter == 1) setTimeout(openmagnific, 300);
+                            event.gesture.preventDefault();
+                        });
+                    }
+
+                    function openmagnific() {
+                        if (counter == 2) {
+                            xzoom.closezoom();
+                            var gallery = xzoom.gallery().cgallery;
+                            var i, images = new Array();
+                            for (i in gallery) {
+                                images[i] = { src: gallery[i] };
+                            }
+                            $.magnificPopup.open({ items: images, type: 'image', gallery: { enabled: true } });
+                        } else {
+                            xzoom.closezoom();
+                        }
+                        counter = 0;
+                    }
+                    xzoom.openzoom(event);
+                });
+            });
+
         } else {
-            console.log('Not Scrolling');
-            // ... YOUR CODE ...
+            //If not touch device
+
+            //Integration with fancybox plugin
+            $('#xzoom-fancy').bind('click', function (event) {
+                var xzoom = $(this).data('xzoom');
+                xzoom.closezoom();
+                $.fancybox.open(xzoom.gallery().cgallery, { padding: 0, helpers: { overlay: { locked: false } } });
+                event.preventDefault();
+            });
+
+            //Integration with magnific popup plugin
+            $('#xzoom-magnific').bind('click', function (event) {
+                var xzoom = $(this).data('xzoom');
+                xzoom.closezoom();
+                var gallery = xzoom.gallery().cgallery;
+                var i, images = new Array();
+                for (i in gallery) {
+                    images[i] = { src: gallery[i] };
+                }
+                $.magnificPopup.open({ items: images, type: 'image', gallery: { enabled: true } });
+                event.preventDefault();
+            });
         }
     });
-};
-//# sourceURL=pen.js
+})(jQuery);

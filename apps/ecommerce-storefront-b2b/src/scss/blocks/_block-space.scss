@@ -9,7 +9,7 @@
 
 .nao-spacer-after-header {
     @include media-breakpoint-up(xl) {
-        height: (24px + 60px);
+        height: (80px + 60px);
 
         &.block-space--header--classic {
             height: 72px;

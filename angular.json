@@ -41,10 +41,11 @@
               "node_modules/animate.css/animate.css"
             ],
             "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
               "apps/ecommerce-storefront-b2b/src/scripts/stickyHeader.js",
               "node_modules/wowjs/dist/wow.js",
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/jquery-slimscroll/jquery.slimscroll.min.js"
+              "node_modules/jquery-slimscroll/jquery.slimscroll.min.js",
+              "node_modules/xzoom/dist/xzoom.min.js"
             ]
           },
           "configurations": {

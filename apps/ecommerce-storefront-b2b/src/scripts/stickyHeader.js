@@ -25,17 +25,41 @@ function myFunction() {
     
 }
 
+//when the user scrolls the page ,execute animations
+//window.onload = function () { myFunction1() };
+window.addEventListener('load', onLoadFunction, false);
+
+function onLoadFunction() {
+    var wow = new WOW(
+        {
+            boxClass: 'wow',      // animated element css class (default is wow)
+            animateClass: 'animated', // animation css class (default is animated)
+            offset: 0,          // distance to the element when triggering the animation (default is 0)
+            mobile: true,       // trigger animations on mobile devices (default is true)
+            live: true,       // act on asynchronously loaded content (default is true)
+            callback: function (box) {
+                // the callback is fired every time an animation is started
+                // the argument that is passed in is the DOM node being animated
+            },
+            scrollContainer: null // optional scroll container selector, otherwise use window
+        }
+    );
+    wow.init();
+
+}
+
 
 // This handler will be executed only once when the cursor
 // moves over the unordered list
-window.addEventListener('load', mouseOverFunction, false);
+$(document).on('mouseenter', '.xzoom-container', function () { mouseOverFunction() });
 
 // $(".xzoom-container").onmouseover = function () { mouseOverFunction() };
 function mouseOverFunction() {
    
         console.log("mouseOvercheck");
 
-            $('.xzoom, .xzoom-gallery').xzoom({ zoomWidth: 150,zoomHeight:150, title: true, tint: '#333', Xoffset: 15 });
+            $('.xzoom, .xzoom-gallery').xzoom({ zoomWidth:200, zoomHeight:150, title: true, tint: '#333', Xoffset: 15 });
+            
             $('.xzoom2, .xzoom-gallery2').xzoom({ position: '#xzoom2-id', tint: '#ffa200' });
             $('.xzoom3, .xzoom-gallery3').xzoom({ position: 'lens', lensShape: 'circle', sourceClass: 'xzoom-hidden' });
             $('.xzoom4, .xzoom-gallery4').xzoom({ tint: '#006699', Xoffset: 15 });
@@ -189,28 +213,6 @@ function mouseOverFunction() {
     
 }
 
-//when the user scrolls the page ,execute animations
-//window.onload = function () { myFunction1() };
-window.addEventListener('load', onLoadFunction, false);
-
-function onLoadFunction() {
-    var wow = new WOW(
-        {
-            boxClass: 'wow',      // animated element css class (default is wow)
-            animateClass: 'animated', // animation css class (default is animated)
-            offset: 0,          // distance to the element when triggering the animation (default is 0)
-            mobile: true,       // trigger animations on mobile devices (default is true)
-            live: true,       // act on asynchronously loaded content (default is true)
-            callback: function (box) {
-                // the callback is fired every time an animation is started
-                // the argument that is passed in is the DOM node being animated
-            },
-            scrollContainer: null // optional scroll container selector, otherwise use window
-        }
-    );
-    wow.init();
-
-}
 
 
 

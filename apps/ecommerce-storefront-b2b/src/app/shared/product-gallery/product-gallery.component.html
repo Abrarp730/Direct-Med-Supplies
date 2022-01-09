@@ -1,13 +1,10 @@
-
-<div id="xzoom-pic" *ngIf="showGallery">
+<div *ngIf="showGallery">
     <div class="xzoom-container" *ngFor="let item of items" [id]="item.id"> <img class="xzoom" id="xzoom-default"
-        [src]="item.image | checkImageFallback" alt="" [attr.width]="400" [attr.height]="270" [attr.xoriginal]="item.image | checkImageFallback" />
-        <div class="xzoom-thumbs"> <a [attr.href]="item.image | checkImageFallback"> <img
-            class="xzoom-gallery" width="80" [src]="item.image | checkImageFallback"
-            [attr.xpreview]="item.image | checkImageFallback"></a> 
-            
-            </div>
+            [src]="item.image | checkImageFallback" alt="" [attr.width]="400" [attr.height]="270"
+            [attr.xoriginal]="item.image | checkImageFallback" />
+        <div class="xzoom-thumbs"> <a [attr.href]="item.image | checkImageFallback"> <img class="xzoom-gallery"
+                    width="80" [src]="item.image | checkImageFallback"
+                    [attr.xpreview]="item.image | checkImageFallback"></a>
         </div>
     </div>
-        
-  
+</div>

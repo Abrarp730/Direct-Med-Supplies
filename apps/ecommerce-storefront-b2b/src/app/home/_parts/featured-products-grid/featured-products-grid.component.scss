@@ -858,3 +858,38 @@
   border: 1px solid #fd7e14;
   color: #ffffff;
 }
+
+
+
+// ***pulse Animation ***
+.experts-section svg {
+  height: 400px;
+  width: 80%;
+  position: absolute;
+  margin-top: -194px;
+  top: 68px;
+  }
+  
+  .experts-section path {
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 1px;
+    fill: none;
+    stroke-dasharray: 630, 500;
+    stroke-dashoffset: 0;
+    animation: pulse1 4s infinite linear;
+  }
+  
+  .experts-section path:nth-child(1) {
+    stroke: rgba(255, 255, 255, 0.1);
+  }
+  
+  @keyframes pulse1 {
+    0% {
+      stroke-dashoffset: 1130;
+    }
+  
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  //*** pulse animation End ***

@@ -233,8 +233,19 @@ function mouseOverFunction() {
 
 
 
-
-
+// $(document).on('click', '.form-check-input' , function () { clickFunction() });
+// function clickFunction() {
+    
+//     var check2 = $('#btnId').prop('disabled')
+//     if(check2 == false){
+        
+//         $('#btnId').prop('disabled', true);
+//     }
+//     else
+//     {
+//         $('#btnId').prop('disabled', false);
+//     }
+// }
 
 
 

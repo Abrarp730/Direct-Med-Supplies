@@ -39,12 +39,12 @@
         </div>
         <app-logo class="header__logo"></app-logo>
         <div class="header__search" style="width: 105%;">
-            <!-- <app-search></app-search> -->
-            <div class="header-email">
+            <app-search></app-search>
+            <!-- <div class="header-email">
                 <input type="email" placeholder="Search Here..">
                 <a class="dropdown-toggle drop-button-header" href="#" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">By Category</a>
-            </div>
+            </div> -->
 
         </div>
         <div class="header__indicators">
@@ -69,11 +69,11 @@
         margin-top: 6px;
     ">
                 <div class="col-12 col-xl-3">
-                    <a style="font-size: 16px;font-weight: 400;" class="nav-link anchor-right-nav" id="orange" href="#">About <span
+                    <a style="font-size: 16px;font-weight: 400;" class="nav-link anchor-right-nav" id="orange" [href]="'site/about-us'">About <span
                             class="sr-only">(current)</span></a>
                 </div>
                 <div class="col-12 col-xl-3">
-                    <a style="font-size: 16px;font-weight: 400" class="nav-link anchor-right-nav" id="orange" href="#">FAQs <span
+                    <a style="font-size: 16px;font-weight: 400" class="nav-link anchor-right-nav" id="orange" [href]="'site/faq'">FAQs <span
                             class="sr-only">(current)</span></a>
                 </div>
                 <div class="col-12 col-xl-5">

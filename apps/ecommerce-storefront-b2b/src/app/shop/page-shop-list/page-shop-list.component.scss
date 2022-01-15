@@ -12,6 +12,7 @@
     max-width: 1400px;
   }
   .pro-filters {
+    padding-top: 25px;
     border-bottom: 0px solid #e4e4e4;
     padding-bottom: 10px;
     display: flow-root;
@@ -25,18 +26,19 @@
     font-size: 12px;
     margin-top: 2%
   }
-
+  
+.show-resu {
+  padding-top: 2px;
+  float: left;
+}
   .filter-01 {
     float: right;
   }
   .filter-02 {
     float: right;
   }
-  
-   #sorting,
-  #res {
-    font-size: 12px;
-    margin-top: 2%
+  .text-muted {
+    color: #6c757d !important;
   }
   #sort {
     outline: none;

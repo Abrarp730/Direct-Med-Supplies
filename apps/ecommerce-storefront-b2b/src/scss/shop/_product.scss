@@ -155,7 +155,7 @@
 .product__actions-item--my-lists,
 .product__actions-item--compare {
     position: relative;
-    margin-top: 14px;
+    //margin-top: 14px;
     margin-bottom: -8px;
     font-size: 13px;
     line-height: 16px;
@@ -183,7 +183,7 @@
         top: -1px;
 
         @include direction {
-            #{$margin-inline-end}: 8px;
+           // #{$margin-inline-end}: 8px;
         }
     }
 
@@ -193,6 +193,7 @@
     &:hover {
         background: map_get($my-lists-button-scheme, hover-bg-color);
         fill: map_get($my-lists-button-scheme, hover-icon-color);
+        border: solid 2px rgb(253 126 20);
     }
     &:active {
         background: map_get($my-lists-button-scheme, active-bg-color);

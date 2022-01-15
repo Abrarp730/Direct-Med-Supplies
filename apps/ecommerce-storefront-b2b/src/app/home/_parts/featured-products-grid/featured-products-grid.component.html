@@ -11,6 +11,7 @@
                 <div class="d-flex align-items-end justify-content-between" style="margin-bottom: 25px;">
                     <h1 *ngIf="blockTitle" class="wow animate__animated  animate__fadeInDown animate__delay-1.8s">{{
                         blockTitle }}</h1>
+                        <div class="nao-site-preloader"></div>
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 400 300">
                         <path d="
@@ -27,7 +28,7 @@
 
                     </svg>
                     <!-- <div class="section-header__divider"></div> -->
-                    <a href="#" class="effect box-fill-center">View All Products</a>
+                    <a href="javascript:void(0)" (click)="redirectToAllProducts()" class="effect box-fill-center">View All Products</a>
                 </div>
             </div>
         </div>
@@ -47,7 +48,7 @@
                                 <div class="team-image-hover">
                                     <div class="team-img-hover-icons">
                                         <div class="team-image-hover-icon">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
+                                            <i [routerLink]="url.product(product)" class="fa fa-search" aria-hidden="true"></i>
                                         </div>
                                         <div class="team-image-hover-icon2">
                                             <i class="fas fa-heart" aria-hidden="true"></i>
@@ -67,7 +68,7 @@
                                     product?.data?.variants[0]?.sku }}</p>
                             </div>
                             <div class="d-flex">
-                                <a href="#" class="cart-button-1" tabindex="0">Add to Cart</a>
+                                <a href="#" [routerLink]="url.product(product)" class="cart-button-1" tabindex="0">{{ 'BUTTON_ADD_TO_CART' | translate }}</a>
                             </div>
                         </div>
 

@@ -1149,7 +1149,7 @@ $local-gutter: 5px;
             visibility: visible;
             opacity: 1;
             transform: translateY(0);
-            max-height: 500px;
+            max-height: 400px;
             overflow-x: hidden;
             overflow-y: scroll;
         }
@@ -1467,17 +1467,17 @@ $local-open-transition-duration: .2s;
     }
     &__counter {
         position: absolute;
-        top: 5px;
+        top: 10px;
         font-size: 10px;
-        line-height: 1;
-        padding: 2px 3px 1px;
-        border-radius: (13px / 2);
+        line-height: 1.5;
+        padding: 2px 7px 2px;
+        border-radius: 50%;
         text-align: center;
         z-index: 0;
         color: map_get($indicator-counter-scheme, opposite);
 
         @include direction {
-            #{$inset-inline-end}: 4px;
+            #{$inset-inline-end}: 10px;
         }
 
         &:before {
@@ -1487,13 +1487,13 @@ $local-open-transition-duration: .2s;
             top: 0;
             bottom: 0;
             z-index: -1;
-            border-radius: 2.5px;
+            border-radius: 50%;
             background-color: map_get($indicator-counter-scheme, main);
 
             @include direction {
                 #{$inset-inline-start}: 0;
                 #{$inset-inline-end}: 0;
-                transform: skewX(#{-11deg * $transform-direction});
+                //transform: skewX(#{-11deg * $transform-direction});
             }
         }
 

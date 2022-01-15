@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from '../../../interfaces/product';
+import { UrlService } from '../../../services/url.service';
 
 @Component({
     selector: 'app-featured-products-grid',
@@ -29,5 +31,11 @@ export class FeaturedProductsGridComponent {
     //     return productCardExcludeMap[this.productCardLayout];
     // }
 
-    constructor() { }
+    constructor(public url: UrlService,      
+         private router: Router,) { }
+
+    public redirectToAllProducts(): void {
+        // -->Redirect: to shop
+        this.router.navigateByUrl(this.url.allProducts(), { state: { resetFilters: true } }).then();
+    }
 }

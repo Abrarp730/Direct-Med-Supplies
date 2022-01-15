@@ -1,6 +1,6 @@
 <!--Page header + breadcrumbs-->
 <!--Spacer-->
-<div class="nao-spacer-before-footer"></div>
+<div class="nao-spacer-before-block-header"></div>
 <!--Spacer-->
 <app-block-header [pageTitle]="pageTitle$ || ''" [breadcrumb]="breadcrumbs || []"></app-block-header>
 
@@ -70,7 +70,7 @@
                                     </div>
                                 </div> -->
                                 <div class="pro-filters">
-                                    <div class="text-muted m-2 show-resu" id="res">
+                                    <div class="text-muted m-2 show-resu" id="res" style="font-size: 14px">
                                         {{ 'TEXT_SHOWING_PRODUCTS' | translate:{
                                         from: data.from || 0,
                                         to: data.to || 0,

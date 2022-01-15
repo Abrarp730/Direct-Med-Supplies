@@ -136,7 +136,7 @@
 
 .cart-section {
     background: #ffffff;
-    padding: 75px 0px;
+    //padding: 75px 0px;
   }
   /*
   I wanted to go with a mobile first approach, but it actually lead to more verbose CSS in this case, so I've gone web first. Can't always force things...
@@ -310,6 +310,7 @@
   
   .totals .cart-hd h4 {
     border-bottom: 1px solid #dee2e6;
+    padding-bottom: 8px;
   }
   
   .cart-button-2 {
@@ -433,4 +434,7 @@
 
     .margin{
         margin-top: 100px;
+    }
+    .right-bdr {
+      border-right:1px solid #f3f3f3;
     }

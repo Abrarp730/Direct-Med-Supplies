@@ -2269,7 +2269,15 @@ img.shapes.shape-five {
 
 
 /* banner===================================================================== */
-#banner {
+
+@media screen and (max-width: 500px) {
+ 
+  #banner .left-banner {
+    padding-top: 1px !important;
+    padding-bottom: 50px;
+  }
+}
+.banner {
   background-color: #ffffff;
   padding-top: 94px;
   padding-bottom: 50px;

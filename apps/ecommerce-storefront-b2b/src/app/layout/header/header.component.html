@@ -6,15 +6,29 @@
     <div class="header__topbar ">
         <!-- <app-topbar></app-topbar> -->
         <div class="container super-top-nav">
-            <div class="row row align-items-center justify-content-between">
-                <div>
+            <div class="row align-items-center justify-content-between" >
+             
                     <p>Stay Home, and save up to 20%, or call us for more info<i class="fa fa-phone"
                             aria-hidden="true"></i><span>+821 2235 555</span></p>
-                </div>
+                
                 <div class="supet-top-nav-button">
-                    <a href="" routerLink="/account/login"><i class="fa fa-lock" aria-hidden="true"></i>Sign In</a>
-                    <a href="" routerLink="/account/register"><i class="fa fa-user-circle" aria-hidden="true"></i>Sign Up</a>
-                    <a href=""><i class="fa fa-heart" aria-hidden="true"></i>My List</a>
+                    <nav  class="mainnav">
+                        <ul>
+                            <li *ngIf="loggedIn()" class="hasDD"><a><i class="fa fa-user-circle" aria-hidden="true"></i> Hello,
+                                <span *ngIf="userData"> {{ userData.firstName }} </span>  </a>
+                                <ul>
+                                    <li><a href=""  routerLink="/account/dashboard">{{ 'LINK_ACCOUNT_DASHBOARD' | translate }}</a></li>
+                                    <li><a href="" routerLink="/account/profile">{{ 'LINK_ACCOUNT_PROFILE' | translate }}</a></li>
+                                    <li><a href=""  routerLink="/account/invoices">{{ 'LINK_ACCOUNT_INVOICE' | translate }}</a></li>
+                                    <li><a href=""  routerLink="/account/addresses">{{ 'LINK_ACCOUNT_ADDRESSES' | translate }}</a></li>
+                                    <li class="dd-lc"><a (click)="logout()">{{ 'LINK_ACCOUNT_LOGOUT' | translate }}</a></li>
+                                </ul>
+                            </li>
+                            <li> <a style="padding: 0;" *ngIf="!loggedIn()" routerLink="/account/login"><i class="fa fa-lock" aria-hidden="true"></i>Sign In</a></li>
+                            <li> <a style="padding: 0;" *ngIf="!loggedIn()" routerLink="/account/register"><i class="fa fa-user-circle" aria-hidden="true"></i>Sign Up</a></li>
+                            <li><a style="padding: 0;" routerLink="/shop/my-lists" ><i class="fa fa-heart" aria-hidden="true"></i>My List</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -38,7 +52,8 @@
         </div> -->
         </div>
         <app-logo class="header__logo"></app-logo>
-        <div class="header__search" style="width: 105%;">
+        <div> </div>
+        <div class="header__search marginRemove" style="width: 105%;">
             <app-search></app-search>
             <!-- <div class="header-email">
                 <input type="email" placeholder="Search Here..">
@@ -47,7 +62,7 @@
             </div> -->
 
         </div>
-        <div class="header__indicators">
+        <div class="header__indicators marginRemove">
             <!-- <app-indicator
             *ngIf='userData'
             link="/shop/my-lists"

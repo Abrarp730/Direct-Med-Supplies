@@ -43,6 +43,9 @@ export class PageLoginComponent implements OnInit, OnDestroy {
         if (this.loginInProgress || this.formGroup.invalid) {
             return;
         }
+        // --> SetCurrentUser 
+        const user = this.formGroup.value; 
+        localStorage.setItem('user',user.email); 
         // -->Get: formGroup data
         const fd = this.formGroup.getRawValue();
 

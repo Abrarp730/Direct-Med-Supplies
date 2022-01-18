@@ -162,13 +162,13 @@ $header-variant-name: classic-one;
 @if(map_get($header-scheme, main) == map_get($navbar-scheme, main)) {
     .header__navbar {
         border-top: 1px solid map_get($header-scheme, divider);
-
+        margin-top: -12px;
         @if ($navbar-stretch) {
             height: 47px;
             padding-top: 0;
             padding-bottom: 0;
         } @else {
-            height: 53px;
+            height: 45px;
         }
     }
 } @else if($navbar-stretch) {

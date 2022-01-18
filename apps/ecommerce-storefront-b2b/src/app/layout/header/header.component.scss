@@ -156,24 +156,6 @@
     position: relative;
   }
   
-  .floating-dashboard2 {
-    position: absolute;
-    border-radius: 15px;
-    bottom: 2%;
-    right: 5%;
-    animation: bottomanimation 2s infinite;
-    box-shadow: 0px 0px 18px 0px #c9c9c9;
-  }
-  
-  .floating-dashboard {
-    position: absolute;
-    border-radius: 15px;
-    bottom: 30%;
-    left: 5%;
-    animation: upanddown 2s infinite;
-    box-shadow: 0px 0px 18px 0px #c9c9c9;
-  }
-  
   #navbar .anchor-right-nav {
     color: #000000;
     font-weight: 600;

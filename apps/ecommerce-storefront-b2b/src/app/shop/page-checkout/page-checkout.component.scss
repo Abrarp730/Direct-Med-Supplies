@@ -4,7 +4,7 @@
 
 .checkout-section {
     background: #ffffff;
-    padding: 75px 0px;
+    //padding: 75px 0px;
   }
   
   .checkout-section .card-body {
@@ -49,6 +49,7 @@
     text-decoration: none;
     border: 1px solid #fd7e14;
     transition: all .3s ease-in-out;
+    text-align: center;
   }
   
   .cart-button-2:hover {
@@ -64,3 +65,19 @@
   .checkout-section sup{
     color: red;
   }
+  .wrapper {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+  .product-image {
+    float: left;
+    width: 20%;
+  }
+  .image__tag {
+    display: block;
+    width: 80px;
+    height: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    padding-right: 10px;
+}
